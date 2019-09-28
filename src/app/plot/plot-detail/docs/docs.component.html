@@ -1,0 +1,56 @@
+<div class="container">
+  <app-plot-navs></app-plot-navs>
+  <div class="row mt-3">
+    <div class="col-4">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let doc of docs" 
+          [ngClass]="{'active': doc==activeDoc}"> 
+          <div class="row">
+              <div class="col-10" (click)="activate($event, doc)">{{doc.name}}</div>
+              <div class="col-2"> <button  type="button" class="float-right btn btn-sm"
+                [ngClass]="doc==activeDoc ? 'btn-primary': 'btn-outline-primary'"
+                (click)="removeDoc(doc)">X</button> </div>
+          </div>          
+        </li>        
+      </ul>
+      <button type="button" class="mt-3 btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#addDoc">Добавить</button>
+    </div>
+    <div class="col-8">
+      <img [attr.src]="activeDoc?.url " class="img-fluid" />
+    </div>
+  </div>
+  
+</div>
+<!-- Модальное окно добавление документов. -->
+<div class="modal fade" id="addDoc" tabindex="-1" role="dialog" aria-labelledby="addDocLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Добавить документ</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form>
+              <div class="form-group">
+                <label for="fileFormControl">Загрузка документа</label>
+                <input type="file" class="form-control-file" id="fileFormControl">
+              </div>
+              <div class="form-group">
+                <label for="fileType">Тип документа</label>
+                <select class="form-control form-control-sm" id="fileType">
+                  <option>Паспорт</option>
+                  <option>Снилс</option>
+                  <option>Инн</option>
+                </select>
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary">Загрузить</button>
+      </div>
+    </div>
+  </div>
+</div>

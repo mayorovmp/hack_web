@@ -1,0 +1,49 @@
+<nav *ngIf="router.url !== '/login'" class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="" routerLinkActive="active">Экомир</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+
+      <!-- <a class="nav-item nav-link" routerLink="/plot" routerLinkActive="active">Участки <span class="sr-only">(current)</span></a> -->
+      <a class="nav-item nav-link" routerLink="/blog" routerLinkActive="active">Делаем своими руками</a>
+      <!-- <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Добавить
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/ipu" routerLinkActive="active">Делаем своими руками</a>
+          <a class="dropdown-item" routerLink="/ipu" routerLinkActive="active">новость</a>
+          <a class="dropdown-item" routerLink="/ipu" routerLinkActive="active">обсуждение</a>
+        </div>
+      </div> -->
+
+      <!-- <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Обращения граждан
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/claims" routerLinkActive="active">Личные</a>
+          <a class="dropdown-item" routerLink="/select" routerLinkActive="active">Опросы</a>
+          <a class="dropdown-item" routerLink="/conversations" routerLinkActive="active">Обсуждения</a>
+        </div>
+      </div> -->
+    </div>
+    <div class="navbar-nav ml-auto">
+      <div class="nav-item">
+          Пункты
+      </div>
+      <div class="nav-item">
+          Экошоп
+      </div>
+      <div class="nav-item">
+          Бренды
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,18 @@
+.custom-search-input
+{
+    height: 30px;
+}
+.custom-search-btn
+{
+    height: 30px;    
+    padding: 0;  
+    margin: 0;
+}
+.custom-btn{
+    margin: 5px;
+}
+.custom-btn-add{  
+    padding: 2px;  
+    
+    height: 30px;
+}

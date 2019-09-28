@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/plot" routerLinkActive="active">Все участки</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/plot">Участки членов СНТ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/plot">Участки индивидуальные</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/plot">Неприватизированные участки</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/plot">Земли общего пользования</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="w-30">Номер объекта</th>
+        <th class="w-25">Собственники</th>
+        <th class="w-45">Подробнее</th>
+      </tr>
+      <tr>
+        <th>
+          <div class="row">
+            <div class="input-group col-12">
+              <input class="form-control custom-search-input" type="search" value="">
+              <span class="input-group-append">
+                <button class="btn btn-outline-secondary custom-search-btn" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+        </th>
+        <th>
+          <div class="row">
+            <div class="input-group col-12">
+              <input class="form-control custom-search-input" type="search" value="">
+              <span class="input-group-append">
+                <button class="btn btn-outline-secondary custom-search-btn" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+        </th>
+        <th>
+          <div class="row">
+            <div class="col-12 d-flex justify-content-center"><button type="button"
+                class="btn btn-success custom-btn-add">Добавить участок</button>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let plot of plots">
+        <td>{{plot.address}}</td>
+        <td><b *ngFor="let owner of plot.owners">{{owner.name}} {{owner.share}}%<br></b></td>
+        <td>
+          <button type="button" class="btn btn-info custom-btn"
+            [routerLink]="['/plot', plot.flatId, 'main']">Карточка</button>
+          <button type="button" class="btn btn-secondary custom-btn">Показания счетчиков</button>
+          
+          <!-- [routerLink]="['/plot', plot.id, 'statements']"  -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+  <app-plot-navs></app-plot-navs>
+  <div class="row">
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Наименование документа</th>
+              <th>Дата выпуска</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let document of documents">
+              <td>{{document.name}} 
+                  <a class="pull-right" href=""><i class="fa fa-print fa-2x"></i></a>
+              </td>
+              <td>{{document.date|date :'short' : '' :'ru'}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</div>
