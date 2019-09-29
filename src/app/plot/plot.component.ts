@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';  
+import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-//import { PLOTS } from './mock-plot';
 import { Plot } from './Plot'
 import { PlotService } from "./plot.service";
 import { NgxUiLoaderService } from 'ngx-ui-loader';
